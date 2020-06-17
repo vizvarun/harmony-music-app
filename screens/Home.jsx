@@ -11,7 +11,7 @@ const Home = ({ navigation }) => {
         backgroundColor: "#fff",
       }}
     >
-      <Text>Home screen</Text>
+      <Text>Onboarding Screen 1</Text>
       <Button
         title="Go to Page Number 1"
         onPress={() => navigation.navigate("PageA")}
