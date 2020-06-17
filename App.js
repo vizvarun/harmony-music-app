@@ -1,14 +1,5 @@
 import * as React from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { createDrawerNavigator } from "@react-navigation/drawer";
-import Home from "./screens/Home";
-import SettingsPage from "./screens/Settings";
-import PageA from "./screens/PageA";
-import PageB from "./screens/PageB";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { StatusBar, View } from "react-native";
+import { StatusBar, View, Text } from "react-native";
 import * as firebase from "firebase";
 
 const firebaseConfig = {
@@ -23,11 +14,11 @@ const firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-firebase.analytics();
 
 export default function App() {
   return (
     <View>
+      <StatusBar barStyle="dark-content" backgroundColor="#f4f4f4"/>
       <Text>Hello World</Text>
     </View>
   );
