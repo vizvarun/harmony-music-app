@@ -11,7 +11,9 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { StatusBar } from "react-native";
 import * as firebase from "firebase";
 
-const firebaseConfig = {
+{
+  /*
+ const firebaseConfig = {
   apiKey: "AIzaSyA24RLscEW3GsdcmZ0I0SrzSEuP5fc_0qY",
   authDomain: "harmony-music-app.firebaseapp.com",
   databaseURL: "https://harmony-music-app.firebaseio.com",
@@ -23,6 +25,9 @@ const firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+
+*/
+}
 
 const HomeStack = createStackNavigator();
 
