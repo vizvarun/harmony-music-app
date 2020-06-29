@@ -22,7 +22,7 @@ export default function Onboarding() {
           index={0}
           showPagination
           paginationDefaultColor="#c4c4c4"
-          paginationActiveColor="#16151f"
+          paginationActiveColor="#000"
           paginationStyleItem={{
             width: 10,
             height: 10,
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
   },
   footer: {
     flex: 1,
-    backgroundColor: "#16151f",
+    backgroundColor: "#000000",
     borderTopRightRadius: 50,
     borderTopLeftRadius: 50,
   },
@@ -120,6 +120,6 @@ const styles = StyleSheet.create({
   btnText: {
     fontSize: 16,
     fontWeight: "bold",
-    color: "#16151f",
+    color: "#000",
   },
 });
