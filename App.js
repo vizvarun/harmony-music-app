@@ -11,7 +11,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { StatusBar } from "react-native";
 import * as firebase from "firebase";
 import Onboarding from "./screens/Onboarding/Onboarding";
-
+import Login from "./screens/Authentication/Login";
 {
   /*
  const firebaseConfig = {
@@ -90,11 +90,12 @@ export default function App() {
   return (
     <NavigationContainer>
       <StatusBar barStyle="dark-content" backgroundColor="#f4f4f4" />
-      <Onboarding />
-      {/* <Drawer.Navigator>
+      <Drawer.Navigator>
         <Drawer.Screen name="MenuTab" component={TabNavigator} />
-        <Drawer.Screen name="Home" component={HomeStackScreen} />
-      </Drawer.Navigator> */}
+        <Drawer.Screen name="Onboarding" component={Onboarding} />
+        <Drawer.Screen name="Login" component={Login} />
+
+      </Drawer.Navigator>
     </NavigationContainer>
   );
 }
