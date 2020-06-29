@@ -10,6 +10,7 @@ import PageB from "./screens/PageB";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { StatusBar } from "react-native";
 import * as firebase from "firebase";
+import Onboarding from "./screens/Onboarding/Onboarding";
 
 {
   /*
@@ -89,10 +90,11 @@ export default function App() {
   return (
     <NavigationContainer>
       <StatusBar barStyle="dark-content" backgroundColor="#f4f4f4" />
-      <Drawer.Navigator>
+      <Onboarding />
+      {/* <Drawer.Navigator>
         <Drawer.Screen name="MenuTab" component={TabNavigator} />
         <Drawer.Screen name="Home" component={HomeStackScreen} />
-      </Drawer.Navigator>
+      </Drawer.Navigator> */}
     </NavigationContainer>
   );
 }
