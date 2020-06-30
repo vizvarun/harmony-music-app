@@ -90,7 +90,7 @@ function TabNavigator() {
 export default function App() {
   return (
     <NavigationContainer>
-      <StatusBar barStyle="light-content" backgroundColor="#1D1C27" />
+      <StatusBar barStyle="light-content" backgroundColor="#000" />
       <Drawer.Navigator>
         <Drawer.Screen name="MenuTab" component={TabNavigator} />
         <Drawer.Screen name="Onboarding" component={Onboarding} />
