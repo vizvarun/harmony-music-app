@@ -12,6 +12,7 @@ import { StatusBar } from "react-native";
 import * as firebase from "firebase";
 import Onboarding from "./screens/Onboarding/Onboarding";
 import Login from "./screens/Authentication/Login";
+import Signup from "./screens/Authentication/Signup";
 {
   /*
  const firebaseConfig = {
@@ -94,6 +95,7 @@ export default function App() {
         <Drawer.Screen name="MenuTab" component={TabNavigator} />
         <Drawer.Screen name="Onboarding" component={Onboarding} />
         <Drawer.Screen name="Login" component={Login} />
+        <Drawer.Screen name="Signup" component={Signup} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
