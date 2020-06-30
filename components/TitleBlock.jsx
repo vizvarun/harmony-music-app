@@ -3,25 +3,29 @@ import {
   StyleSheet,
   Text,
   View,
+  TouchableOpacity,
   Image,
   Dimensions,
-  ScrollView,
 } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
-import TitleBlock from "../../components/TitleBlock";
 const { width, height } = Dimensions.get("window");
 
-export default function HomePage() {
+export default function TitleBlock(props) {
   return (
-    <>
-      <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
-        <TitleBlock
-          heroText="Timeline"
-          subText="Hey there you just learned props"
-        />
-        <View style={styles.mainBlock}></View>
-      </ScrollView>
-    </>
+    <View style={styles.container}>
+      <View style={styles.headBlock}>
+        <View style={styles.headTextBlock}>
+          <Text style={styles.heroText}>{props.heroText}</Text>
+          <Text style={styles.subText}>{props.subText}</Text>
+        </View>
+        <TouchableOpacity onPress={console.log("Profile Image Pressed")}>
+          <Image
+            source={require("../assets/display.jpeg")}
+            resizeMode="contain"
+            style={styles.displayImage}
+          />
+        </TouchableOpacity>
+      </View>
+    </View>
   );
 }
 
@@ -33,6 +37,7 @@ const styles = StyleSheet.create({
   headTextBlock: {
     marginHorizontal: 16,
     marginVertical: 14,
+    width: width / 1.5,
   },
   headBlock: {
     flexDirection: "row",
@@ -51,12 +56,7 @@ const styles = StyleSheet.create({
   displayImage: {
     width: width / 5,
     height: height / 15,
-    marginLeft: width / 12,
     borderRadius: width / 20,
     marginVertical: 15,
-  },
-  mainBlock: {
-    height: height * 2,
-    backgroundColor: "#f0f0f0",
   },
 });
