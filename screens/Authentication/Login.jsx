@@ -168,7 +168,12 @@ const Login = ({ navigation }) => {
         </TouchableOpacity>
 
         <Modal animationType="fade" transparent={true} visible={modalVisible}>
-          <View style={styles.centeredView}>
+          <View
+            style={[
+              styles.centeredView,
+              { backgroundColor: "rgba(0,0,0,0.6)" },
+            ]}
+          >
             <View style={styles.modalView}>
               <TouchableOpacity
                 onPress={() => {
@@ -220,7 +225,7 @@ const Login = ({ navigation }) => {
 
               <TouchableOpacity
                 style={{ ...styles.openButton, backgroundColor: "#000" }}
-                onPress= {console.log("Recover Button Pressed")}
+                onPress={console.log("Recover Button Pressed")}
               >
                 <Text style={styles.textStyle}>RECOVER YOUR PASSWORD</Text>
               </TouchableOpacity>
