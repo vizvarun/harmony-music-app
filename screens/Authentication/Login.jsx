@@ -4,10 +4,10 @@ import {
   Text,
   StyleSheet,
   Dimensions,
-  Image,
-  Button,
+  Modal,
   ImageBackground,
   TouchableOpacity,
+  TouchableHighlight,
 } from "react-native";
 import * as Animatable from "react-native-animatable";
 import { Feather } from "@expo/vector-icons";
@@ -15,6 +15,7 @@ import { TextInput } from "react-native-gesture-handler";
 const { width, height } = Dimensions.get("window");
 
 const Login = ({ navigation }) => {
+  const [modalVisible, setModalVisible] = useState(false);
   const [data, setData] = useState({
     username: "",
     password: "",
@@ -156,11 +157,77 @@ const Login = ({ navigation }) => {
             </Text> 
           </Animatable.View>
         )} */}
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            setModalVisible(true);
+          }}
+        >
           <Text style={{ color: "#c4c4c4", marginTop: 30, fontWeight: "bold" }}>
             Forgot password?
           </Text>
         </TouchableOpacity>
+
+        <Modal animationType="fade" transparent={true} visible={modalVisible}>
+          <View style={styles.centeredView}>
+            <View style={styles.modalView}>
+              <TouchableOpacity
+                onPress={() => {
+                  setModalVisible(!modalVisible);
+                }}
+                style={{ marginLeft: width / 2 }}
+              >
+                <Feather
+                  name="x-circle"
+                  size={24}
+                  color="black"
+                  style={{ marginBottom: 10 }}
+                />
+              </TouchableOpacity>
+              <View
+                style={[
+                  styles.action,
+                  {
+                    marginTop: 20,
+                    borderBottomColor: "black",
+                  },
+                ]}
+              >
+                <Feather
+                  name="mail"
+                  size={18}
+                  color="black"
+                  style={{ marginTop: 4 }}
+                />
+                <TextInput
+                  placeholder="Email ID"
+                  placeholderTextColor="gray"
+                  style={styles.textInputModal}
+                  autoCapitalize="none"
+                  onChangeText={(val) => textInputChange(val)}
+                  onEndEditing={(e) => handleValidUser(e.nativeEvent.text)}
+                />
+                {data.check_textInputChange ? (
+                  <Animatable.View animation="bounceIn">
+                    <Feather
+                      name="check-circle"
+                      size={16}
+                      color="black"
+                      style={{ marginTop: 4 }}
+                    />
+                  </Animatable.View>
+                ) : null}
+              </View>
+
+              <TouchableOpacity
+                style={{ ...styles.openButton, backgroundColor: "#000" }}
+                onPress= {console.log("Recover Button Pressed")}
+              >
+                <Text style={styles.textStyle}>RECOVER YOUR PASSWORD</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </Modal>
+
         <View style={{ alignItems: "center", justifyContent: "center" }}>
           <TouchableOpacity
             style={[
@@ -279,5 +346,53 @@ const styles = StyleSheet.create({
   loginImage: {
     width: "100%",
     height: "100%",
+  },
+  centeredView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 22,
+  },
+  modalView: {
+    margin: 20,
+    width: width / 1.25,
+    height: height / 2.8,
+    backgroundColor: "white",
+    borderRadius: 10,
+    padding: 35,
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+  openButton: {
+    backgroundColor: "#000",
+    position: "absolute",
+    bottom: height / 20,
+    borderRadius: 50,
+    padding: 10,
+    elevation: 2,
+  },
+  textStyle: {
+    color: "white",
+    fontWeight: "bold",
+    textAlign: "center",
+    padding: 8,
+    paddingHorizontal: 15,
+  },
+  modalText: {
+    marginBottom: 15,
+    textAlign: "center",
+  },
+  textInputModal: {
+    flex: 1,
+    marginTop: 0,
+    paddingLeft: 10,
+    color: "black",
   },
 });
