@@ -1,16 +1,22 @@
 import React from "react";
+import { StyleSheet } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Feather } from "@expo/vector-icons";
-import Login from "../Authentication/Login";
-import Signup from "../Authentication/Signup";
+import { Feather, SimpleLineIcons } from "@expo/vector-icons";
 import Home from "../Main/Home";
+import Trending from "../Main/Trending";
+import AddPost from "../Main/AddPost";
+import Smiles from "../Main/Smiles";
+import Search from "../Main/Search";
 
-const LoginStack = createStackNavigator();
-const SignupStack = createStackNavigator();
+const HomeStack = createStackNavigator();
+const TrendingStack = createStackNavigator();
+const AddPostStack = createStackNavigator();
+const SmilesStack = createStackNavigator();
+const SearchStack = createStackNavigator();
 
-const LoginStackScreen = ({ navigation }) => (
-  <LoginStack.Navigator
+const HomeStackScreen = ({ navigation }) => (
+  <HomeStack.Navigator
   // screenOptions={{
   //   headerStyle: {
   //     backgroundColor: "#fff",
@@ -20,26 +26,18 @@ const LoginStackScreen = ({ navigation }) => (
   //   },
   // }}
   >
-    <LoginStack.Screen
-      name="Login"
-      component={Login}
+    <HomeStack.Screen
+      name="Details"
+      component={Home}
       options={{
-        headerLeft: () => (
-          <Feather
-            name="menu"
-            size={25}
-            backgroundColor="#fff"
-            color="black"
-            onPress={() => {}}
-          />
-        ),
+        headerShown: false,
       }}
     />
-  </LoginStack.Navigator>
+  </HomeStack.Navigator>
 );
 
-const SignupStackScreen = ({ navigation }) => (
-  <SignupStack.Navigator
+const TrendingStackScreen = ({ navigation }) => (
+  <TrendingStack.Navigator
   // screenOptions={{
   //   headerStyle: {
   //     backgroundColor: "#fff",
@@ -49,60 +47,134 @@ const SignupStackScreen = ({ navigation }) => (
   //   },
   // }}
   >
-    <SignupStack.Screen
+    <TrendingStack.Screen
       name="Details"
-      component={Signup}
+      component={Trending}
       options={{
-        headerLeft: () => (
-          <Feather
-            name="menu"
-            size={25}
-            backgroundColor="#fff"
-            color="black"
-            onPress={() => {}}
-          />
-        ),
+        headerShown: false,
       }}
     />
-  </SignupStack.Navigator>
+  </TrendingStack.Navigator>
+);
+
+const AddPostStackScreen = ({ navigation }) => (
+  <AddPostStack.Navigator
+  // screenOptions={{
+  //   headerStyle: {
+  //     backgroundColor: "#fff",
+  //   },
+  //   headerTitleStyle: {
+  //     fontWeight: "bold",
+  //   },
+  // }}
+  >
+    <AddPostStack.Screen
+      name="Details"
+      component={AddPost}
+      options={{
+        headerShown: false,
+      }}
+    />
+  </AddPostStack.Navigator>
+);
+
+const SmilesStackScreen = ({ navigation }) => (
+  <SmilesStack.Navigator
+  // screenOptions={{
+  //   headerStyle: {
+  //     backgroundColor: "#fff",
+  //   },
+  //   headerTitleStyle: {
+  //     fontWeight: "bold",
+  //   },
+  // }}
+  >
+    <SmilesStack.Screen
+      name="Details"
+      component={Smiles}
+      options={{
+        headerShown: false,
+      }}
+    />
+  </SmilesStack.Navigator>
+);
+
+const SearchStackScreen = ({ navigation }) => (
+  <SearchStack.Navigator
+  // screenOptions={{
+  //   headerStyle: {
+  //     backgroundColor: "#fff",
+  //   },
+  //   headerTitleStyle: {
+  //     fontWeight: "bold",
+  //   },
+  // }}
+  >
+    <SearchStack.Screen
+      name="Details"
+      component={Search}
+      options={{
+        headerShown: false,
+      }}
+    />
+  </SearchStack.Navigator>
 );
 
 const Tab = createBottomTabNavigator();
 
 const MainNavigator = () => (
   <Tab.Navigator
-    initialRouteName="Feed"
+    initialRouteName="Home"
     tabBarOptions={{
-      activeTintColor: "#e91e63",
+      activeTintColor: "white",
+      inactiveTintColor: "#727272",
+      showLabel: false,
+      inactiveBackgroundColor: "black",
+      activeBackgroundColor: "black",
     }}
   >
     <Tab.Screen
-      name="Login"
-      component={LoginStackScreen}
+      name="Home"
+      component={HomeStackScreen}
       options={{
-        tabBarLabel: "Home",
         tabBarIcon: ({ color, size }) => (
           <Feather name="home" color={color} size={size} />
         ),
       }}
     />
     <Tab.Screen
-      name="Signup"
-      component={SignupStackScreen}
+      name="Trending"
+      component={TrendingStackScreen}
       options={{
-        tabBarLabel: "Updates",
         tabBarIcon: ({ color, size }) => (
-          <Feather name="bell" color={color} size={size} />
+          <SimpleLineIcons name="fire" color={color} size={22} />
         ),
       }}
     />
     <Tab.Screen
-      name="Home"
-      component={Home}
+      name="AddPost"
+      component={AddPostStackScreen}
       options={{
-        tabBarLabel: "Profile",
         tabBarIcon: ({ color, size }) => (
-          <Feather name="account" color={color} size={size} />
+          <Feather name="plus-circle" color={color} size={size} />
+        ),
+      }}
+    />
+    <Tab.Screen
+      name="Smiles"
+      component={SmilesStackScreen}
+      options={{
+        tabBarIcon: ({ color, size }) => (
+          <Feather name="smile" color={color} size={size} />
+        ),
+      }}
+    />
+    <Tab.Screen
+      name="Search"
+      component={SearchStackScreen}
+      options={{
+        tabBarIcon: ({ color, size }) => (
+          <Feather name="search" color={color} size={size} />
         ),
       }}
     />
@@ -110,3 +182,9 @@ const MainNavigator = () => (
 );
 
 export default MainNavigator;
+
+const styles = StyleSheet.create({
+  bottomTabBar: {
+    backgroundColor: "black",
+  },
+});

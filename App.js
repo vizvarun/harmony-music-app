@@ -3,11 +3,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { StatusBar } from "react-native";
 import * as firebase from "firebase";
-import Onboarding from "./screens/Onboarding/Onboarding";
-import Login from "./screens/Authentication/Login";
-import Signup from "./screens/Authentication/Signup";
-import HomePage from "./screens/Main/Home";
 import MainNavigator from "./screens/Navigators/MainNavigator";
+import Header from "./components/Header";
 {
   /*
  const firebaseConfig = {
@@ -28,18 +25,19 @@ firebase.initializeApp(firebaseConfig);
 
 const Drawer = createDrawerNavigator();
 
-
 export default function App() {
   return (
     <NavigationContainer>
       <StatusBar barStyle="light-content" backgroundColor="#000" />
-      <Drawer.Navigator>
+      {/* <Drawer.Navigator>
         <Drawer.Screen name="Onboarding" component={Onboarding} />
         <Drawer.Screen name="Login" component={Login} />
         <Drawer.Screen name="Signup" component={Signup} />
         <Drawer.Screen name="Home" component={HomePage} />
         <Drawer.Screen name="MenuTab" component={MainNavigator} />
-      </Drawer.Navigator>
+      </Drawer.Navigator> */}
+      <Header />
+      <MainNavigator />
     </NavigationContainer>
   );
 }

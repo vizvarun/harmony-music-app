@@ -7,15 +7,12 @@ import {
   Dimensions,
   ScrollView,
 } from "react-native";
-import Header from "../../components/Header";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import MainNavigator from "../Navigators/MainNavigator";
 const { width, height } = Dimensions.get("window");
 
 export default function HomePage() {
   return (
     <>
-      <Header />
       <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
         <View style={styles.headBlock}>
           <View style={styles.headTextBlock}>
