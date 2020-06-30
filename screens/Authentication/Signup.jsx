@@ -236,7 +236,7 @@ const Signup = ({ navigation }) => {
                   borderRadius: 50,
                 },
               ]}
-              onPress={console.log("Pressed")}
+              onPress={() => navigation.navigate("Home")}
             >
               <Text
                 style={[
@@ -267,7 +267,7 @@ const Signup = ({ navigation }) => {
                   borderRadius: 50,
                 },
               ]}
-              onPress={console.log("Pressed")}
+              onPress={() => navigation.navigate("Login")}
             >
               <Text
                 style={[

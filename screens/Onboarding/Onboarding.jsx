@@ -11,7 +11,7 @@ const { width, height } = Dimensions.get("window");
 import SwiperFlatList from "react-native-swiper-flatlist";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
-export default function Onboarding() {
+export default function Onboarding({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
@@ -58,7 +58,10 @@ export default function Onboarding() {
           Lorem Ipsum Dolor Sit Lorem Ipsum Dolor Sit Lorem Ipsum Dolor Sit
           Lorem Ipsum Dolor Sit
         </Text>
-        <TouchableOpacity style={styles.btnNext}>
+        <TouchableOpacity
+          style={styles.btnNext}
+          onPress={() => navigation.navigate("Login")}
+        >
           <Text style={styles.btnText}>Get Started</Text>
         </TouchableOpacity>
       </View>
