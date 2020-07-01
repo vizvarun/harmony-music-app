@@ -9,9 +9,10 @@ import {
 } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import TitleBlock from "../../components/TitleBlock";
+import Stories from "../../components/Stories";
 const { width, height } = Dimensions.get("window");
 
-export default function HomePage() {
+export default function HomePage(props) {
   return (
     <>
       <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
@@ -19,7 +20,9 @@ export default function HomePage() {
           heroText="Timeline"
           subText="Hey there you just learned props"
         />
-        <View style={styles.mainBlock}></View>
+        <View style={styles.mainBlock}>
+          <Stories />
+        </View>
       </ScrollView>
     </>
   );
@@ -58,5 +61,9 @@ const styles = StyleSheet.create({
   mainBlock: {
     height: height * 2,
     backgroundColor: "#f0f0f0",
+  },
+  stories: {
+    flexDirection: "row",
+    maxHeight: height / 8,
   },
 });
