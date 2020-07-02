@@ -8,6 +8,7 @@ import Trending from "../Main/Trending";
 import AddPost from "../Main/AddPost";
 import Smiles from "../Main/Smiles";
 import Search from "../Main/Search";
+import { AddButton } from "../../components/AddButton";
 
 const HomeStack = createStackNavigator();
 const TrendingStack = createStackNavigator();
