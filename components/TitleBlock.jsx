@@ -46,8 +46,8 @@ const styles = StyleSheet.create({
   },
   heroText: {
     fontSize: 24,
-    fontWeight: "700",
     color: "#424242",
+    fontFamily: "OswaldBold",
   },
   subText: {
     fontSize: 14,

@@ -13,10 +13,6 @@ import Stories from "../../components/Stories";
 import PostBlock from "../../components/PostBlock";
 const { width, height } = Dimensions.get("window");
 
-const fullName = ["Tones and I"];
-const userName = ["@tonesandi"];
-const uploadTime = ["3 hrs ago"];
-
 export default function HomePage(props) {
   return (
     <>

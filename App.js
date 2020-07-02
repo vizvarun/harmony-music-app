@@ -10,6 +10,8 @@ import LoggedInDashboard from "./components/LoggedInDashboard";
 import Onboarding from "./screens/Onboarding/Onboarding";
 import Login from "./screens/Authentication/Login";
 import Signup from "./screens/Authentication/Signup";
+import { useFonts } from "@use-expo/font";
+import { AppLoading } from "expo";
 
 {
   /*
@@ -33,26 +35,39 @@ const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 
 export default function App() {
-  return (
-    <NavigationContainer>
-      <StatusBar barStyle="light-content" backgroundColor="#000" />
-      {/* <Drawer.Navigator>
+  let [fontsLoaded] = useFonts({
+    OswaldBold: require("./assets/Oswald-Bold.ttf"),
+    OswaldSemiBold: require("./assets/Oswald-SemiBold.ttf"),
+    OswaldRegular: require("./assets/Oswald-Regular.ttf"),
+    OswaldMedium: require("./assets/Oswald-Medium.ttf"),
+    OswaldLight: require("./assets/Oswald-Light.ttf"),
+    OswaldExtraLight: require("./assets/Oswald-ExtraLight.ttf"),
+  });
+
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  } else {
+    return (
+      <NavigationContainer>
+        <StatusBar barStyle="light-content" backgroundColor="#000" />
+        {/* <Drawer.Navigator>
         <Drawer.Screen name="Onboarding" component={Onboarding} />
         <Drawer.Screen name="Login" component={Login} />
         <Drawer.Screen name="Signup" component={Signup} />
         <Drawer.Screen name="Home" component={HomePage} />
       </Drawer.Navigator> */}
-      <Stack.Navigator
-        initialRouteName="Onboarding"
-        screenOptions={{
-          headerShown: false,
-        }}
-      >
-        <Stack.Screen name="Onboarding" component={Onboarding} />
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Signup" component={Signup} />
-        <Stack.Screen name="Home" component={LoggedInDashboard} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+        <Stack.Navigator
+          initialRouteName="Onboarding"
+          screenOptions={{
+            headerShown: false,
+          }}
+        >
+          <Stack.Screen name="Onboarding" component={Onboarding} />
+          <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="Signup" component={Signup} />
+          <Stack.Screen name="Home" component={LoggedInDashboard} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
+  }
 }

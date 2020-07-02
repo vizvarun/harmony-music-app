@@ -55,6 +55,7 @@ export default function PostBlock(props) {
             </TouchableOpacity>
           </View>
         </View>
+        <View style={styles.detailsBlock}></View>
       </View>
     </View>
   );
