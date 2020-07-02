@@ -14,12 +14,16 @@
     "@react-navigation/bottom-tabs": "^5.5.2",
     "@react-navigation/drawer": "^5.8.2",
     "@react-navigation/material-bottom-tabs": "^5.2.12",
+    "@react-navigation/material-top-tabs": "^5.2.12",
     "@react-navigation/native": "^5.5.1",
     "@react-navigation/stack": "^5.5.1",
     "@use-expo/font": "^2.0.0",
     "add": "^2.0.6",
     "expo": "~37.0.3",
+<<<<<<< HEAD
     "expo-font": "~8.1.0",
+=======
+>>>>>>> a825dfd0c8aa9d1b9eafd6972b3237b49eedeb4a
     "firebase": "^7.15.1",
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
@@ -31,8 +35,11 @@
     "react-native-safe-area-context": "0.7.3",
     "react-native-screens": "~2.2.0",
     "react-native-swiper-flatlist": "^2.0.4",
+    "react-native-tab-view": "^2.14.4",
+
     "react-native-video": "^4.4.5",
     "react-native-web": "~0.11.7",
+    "rn-range-slider": "^1.3.2",
     "yarn": "^1.22.4"
   },
   "devDependencies": {
