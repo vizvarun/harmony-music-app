@@ -19,7 +19,7 @@ export default function TitleBlock(props) {
         </View>
         <TouchableOpacity onPress={console.log("Profile Image Pressed")}>
           <Image
-            source={require("../assets/display.jpeg")}
+            source={require("../assets/charlie.png")}
             resizeMode="contain"
             style={styles.displayImage}
           />

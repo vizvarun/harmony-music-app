@@ -10,13 +10,13 @@ import {
 const { width, height } = Dimensions.get("window");
 
 const illustrations = [
-  { id: 1, source: require("../assets/shawn.png") },
-  { id: 2, source: require("../assets/charlie.png") },
+  { id: 4, source: require("../assets/marshmellow.png") },
   { id: 3, source: require("../assets/malone.png") },
-  { id: 4, source: require("../assets/marshmallow.png") },
-  { id: 5, source: require("../assets/album.png") },
-  { id: 6, source: require("../assets/display.jpeg") },
+  { id: 2, source: require("../assets/charlie.png") },
+  { id: 6, source: require("../assets/imaginedragons.png") },
   { id: 7, source: require("../assets/tonesAndI.png") },
+  { id: 1, source: require("../assets/shawn.png") },
+  { id: 5, source: require("../assets/djsnake.png") },
 ];
 
 export default function Stories(props) {

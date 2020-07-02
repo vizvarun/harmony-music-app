@@ -9,16 +9,6 @@ import {
 } from "react-native";
 const { width, height } = Dimensions.get("window");
 
-const illustrations = [
-  { id: 1, source: require("../assets/shawn.png") },
-  { id: 2, source: require("../assets/charlie.png") },
-  { id: 3, source: require("../assets/malone.png") },
-  { id: 4, source: require("../assets/marshmallow.png") },
-  { id: 5, source: require("../assets/album.png") },
-  { id: 6, source: require("../assets/display.jpeg") },
-  { id: 7, source: require("../assets/tonesAndI.png") },
-];
-
 export default function PostBlock(props) {
   const [playControl, setPlayControl] = useState(true);
   const handlePlayControl = () => {

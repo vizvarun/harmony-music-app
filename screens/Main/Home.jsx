@@ -28,6 +28,13 @@ export default function HomePage(props) {
         <View style={styles.mainBlock}>
           <Stories />
           <PostBlock
+            fullName="Imagine Dragons"
+            userName="@imaginedragons"
+            userImage={require("../../assets/imaginedragons.png")}
+            uploadTime="2 hrs ago"
+            albumImage={require("../../assets/album5.png")}
+          />
+          <PostBlock
             fullName="Tones and I"
             userName="@tonesandi"
             uploadTime="3 hrs ago"
@@ -35,11 +42,32 @@ export default function HomePage(props) {
             albumImage={require("../../assets/dp2.jpg")}
           />
           <PostBlock
+            fullName="Charlie Puth"
+            userName="@puthcharlie"
+            userImage={require("../../assets/charlie.png")}
+            uploadTime="5 hrs ago"
+            albumImage={require("../../assets/album2.png")}
+          />
+          <PostBlock
+            fullName="Shawn Mendes"
+            userName="@shawnmusic"
+            userImage={require("../../assets/shawn.png")}
+            uploadTime="7 hrs ago"
+            albumImage={require("../../assets/album3.png")}
+          />
+          <PostBlock
             fullName="DJ Snake"
             userName="@djsnake"
             userImage={require("../../assets/djsnake.png")}
-            uploadTime="5 hrs ago"
+            uploadTime="16 hrs ago"
             albumImage={require("../../assets/album.png")}
+          />
+          <PostBlock
+            fullName="Marshmellow"
+            userName="@mmellow"
+            userImage={require("../../assets/marshmellow.png")}
+            uploadTime="a day ago"
+            albumImage={require("../../assets/album4.png")}
           />
         </View>
       </ScrollView>
