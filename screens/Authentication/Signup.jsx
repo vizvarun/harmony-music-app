@@ -331,6 +331,7 @@ const styles = StyleSheet.create({
     marginTop: 0,
     paddingLeft: 10,
     color: "white",
+    fontFamily: "OswaldRegular",
   },
   errorMsg: {
     color: "#FF0000",
@@ -344,8 +345,8 @@ const styles = StyleSheet.create({
   },
   textSign: {
     fontSize: 15,
-    fontWeight: "bold",
-    color: "#3B3A45",
+    color: "#000",
+    fontFamily: "OswaldSemiBold",
     textTransform: "uppercase",
   },
 

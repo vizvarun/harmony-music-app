@@ -98,13 +98,14 @@ const styles = StyleSheet.create({
     color: "white",
     width: width / 1.75,
     fontSize: 24,
-    fontWeight: "bold",
     marginHorizontal: 35,
     marginVertical: 10,
     marginTop: 50,
+    fontFamily: "OswaldSemiBold",
   },
   subText: {
     color: "#f4f4f4",
+    fontFamily: "OswaldRegular",
     fontSize: 14,
     width: width / 1.4,
     marginHorizontal: 35,
@@ -122,7 +123,7 @@ const styles = StyleSheet.create({
   },
   btnText: {
     fontSize: 16,
-    fontWeight: "bold",
+    fontFamily: "OswaldRegular",
     color: "#000",
   },
 });
