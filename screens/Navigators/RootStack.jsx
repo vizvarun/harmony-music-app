@@ -1,12 +1,25 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { createStackNavigator } from "@react-navigation/stack";
+import MainNavigator from "./MainNavigator";
+import Profile from "../Main/Profile";
+import LoggedInDashboard from "../../components/LoggedInDashboard";
+import TitleBlock from "../../components/TitleBlock";
+import Header from "../../components/Header";
 
-export default function RootStack() {
-  return (
-    <View>
-      <Text>Navigator</Text>
-    </View>
-  );
-}
+const Stack = createStackNavigator();
 
-const styles = StyleSheet.create({});
+const RootStack = ({ navigation }) => (
+  <Stack.Navigator
+    initialRouteName="Main"
+    screenOptions={{
+      headerShown: false,
+    }}
+  >
+    <Stack.Screen name="Main" component={LoggedInDashboard} />
+    <Stack.Screen name="Title" component={TitleBlock} />
+    <Stack.Screen name="Profile" component={Profile} />
+    <Stack.Screen name="Header" component={Header} />
+  </Stack.Navigator>
+);
+
+export default RootStack;

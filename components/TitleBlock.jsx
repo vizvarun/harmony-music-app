@@ -7,9 +7,12 @@ import {
   Image,
   Dimensions,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 const { width, height } = Dimensions.get("window");
 
 export default function TitleBlock(props) {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <View style={styles.headBlock}>
@@ -17,7 +20,7 @@ export default function TitleBlock(props) {
           <Text style={styles.heroText}>{props.heroText}</Text>
           <Text style={styles.subText}>{props.subText}</Text>
         </View>
-        <TouchableOpacity onPress={console.log("Profile Image Pressed")}>
+        <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
           <Image
             source={require("../assets/charlie.png")}
             resizeMode="contain"

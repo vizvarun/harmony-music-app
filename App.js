@@ -10,6 +10,9 @@ import Login from "./screens/Authentication/Login";
 import Signup from "./screens/Authentication/Signup";
 import { useFonts } from "@use-expo/font";
 import { AppLoading } from "expo";
+import Profile from "./screens/Main/Profile";
+import TitleBlock from "./components/TitleBlock";
+import RootStack from "./screens/Navigators/RootStack";
 
 {
   /*
@@ -63,6 +66,7 @@ export default function App() {
           <Stack.Screen name="Onboarding" component={Onboarding} />
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Signup" component={Signup} />
+          <Stack.Screen name="Profile" component={Profile} />
           <Stack.Screen name="Home" component={LoggedInDashboard} />
         </Stack.Navigator>
       </NavigationContainer>

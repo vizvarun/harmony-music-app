@@ -8,7 +8,6 @@ import Trending from "../Main/Trending";
 import AddPost from "../Main/AddPost";
 import Smiles from "../Main/Smiles";
 import Search from "../Main/Search";
-import { AddButton } from "../../components/AddButton";
 
 const HomeStack = createStackNavigator();
 const TrendingStack = createStackNavigator();
@@ -28,7 +27,7 @@ const HomeStackScreen = ({ navigation }) => (
   // }}
   >
     <HomeStack.Screen
-      name="Details"
+      name="Home"
       component={Home}
       options={{
         headerShown: false,
@@ -49,7 +48,7 @@ const TrendingStackScreen = ({ navigation }) => (
   // }}
   >
     <TrendingStack.Screen
-      name="Details"
+      name="Trending"
       component={Trending}
       options={{
         headerShown: false,
@@ -70,7 +69,7 @@ const AddPostStackScreen = ({ navigation }) => (
   // }}
   >
     <AddPostStack.Screen
-      name="Details"
+      name="AddPost"
       component={AddPost}
       options={{
         headerShown: false,
@@ -91,7 +90,7 @@ const SmilesStackScreen = ({ navigation }) => (
   // }}
   >
     <SmilesStack.Screen
-      name="Details"
+      name="Smiles"
       component={Smiles}
       options={{
         headerShown: false,
@@ -112,7 +111,7 @@ const SearchStackScreen = ({ navigation }) => (
   // }}
   >
     <SearchStack.Screen
-      name="Details"
+      name="Search"
       component={Search}
       options={{
         headerShown: false,
