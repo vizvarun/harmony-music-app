@@ -4,8 +4,6 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createStackNavigator } from "@react-navigation/stack";
 import { StatusBar } from "react-native";
 import * as firebase from "firebase";
-import MainNavigator from "./screens/Navigators/MainNavigator";
-import Header from "./components/Header";
 import LoggedInDashboard from "./components/LoggedInDashboard";
 import Onboarding from "./screens/Onboarding/Onboarding";
 import Login from "./screens/Authentication/Login";

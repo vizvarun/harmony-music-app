@@ -52,6 +52,7 @@ const styles = StyleSheet.create({
   subText: {
     fontSize: 14,
     color: "#c4c4c4",
+    fontFamily: "OswaldRegular",
   },
   displayImage: {
     width: width / 5,

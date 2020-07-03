@@ -162,7 +162,13 @@ const Login = ({ navigation }) => {
             setModalVisible(true);
           }}
         >
-          <Text style={{ color: "#c4c4c4", marginTop: 30, fontWeight: "bold" }}>
+          <Text
+            style={{
+              color: "#c4c4c4",
+              marginTop: 30,
+              fontFamily: "OswaldSemiBold",
+            }}
+          >
             Forgot password?
           </Text>
         </TouchableOpacity>
@@ -305,7 +311,7 @@ const styles = StyleSheet.create({
   },
   text_header: {
     color: "#fff",
-    fontWeight: "bold",
+    fontFamily: "OswaldBold",
     fontSize: 30,
   },
   text_footer: {
@@ -331,6 +337,7 @@ const styles = StyleSheet.create({
     marginTop: 0,
     paddingLeft: 10,
     color: "white",
+    fontFamily: "OswaldRegular",
   },
   errorMsg: {
     color: "#FF0000",
@@ -344,7 +351,7 @@ const styles = StyleSheet.create({
   },
   textSign: {
     fontSize: 15,
-    fontWeight: "bold",
+    fontFamily: "OswaldSemiBold",
     color: "#3B3A45",
   },
 
@@ -385,7 +392,7 @@ const styles = StyleSheet.create({
   },
   textStyle: {
     color: "white",
-    fontWeight: "bold",
+    fontFamily: "OswaldSemiBold",
     textAlign: "center",
     padding: 8,
     paddingHorizontal: 15,
@@ -399,5 +406,6 @@ const styles = StyleSheet.create({
     marginTop: 0,
     paddingLeft: 10,
     color: "black",
+    fontFamily: "OswaldRegular",
   },
 });

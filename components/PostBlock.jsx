@@ -73,18 +73,21 @@ const styles = StyleSheet.create({
   },
   nameText: {
     fontSize: 16,
-    fontWeight: "700",
     color: "#424242",
+    fontFamily: "OswaldSemiBold",
   },
   usernameText: {
     fontSize: 14,
     color: "#c4c4c4",
+    fontFamily: "OswaldRegular",
   },
   timeText: {
     margin: 20,
     marginHorizontal: width / 10,
     fontSize: 11,
     color: "#606060",
+    fontFamily: "OswaldRegular",
+
   },
   postView: {
     alignItems: "center",
