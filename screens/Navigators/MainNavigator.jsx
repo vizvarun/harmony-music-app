@@ -4,16 +4,16 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Feather, SimpleLineIcons } from "@expo/vector-icons";
 import Home from "../Main/Home";
-import Trending from "../Main/Trending";
 import AddPost from "../Main/AddPost";
 import Smiles from "../Main/Smiles";
 import Search from "../Main/Search";
+import Profile from "../Main/Profile";
 
 const HomeStack = createStackNavigator();
-const TrendingStack = createStackNavigator();
 const AddPostStack = createStackNavigator();
 const SmilesStack = createStackNavigator();
 const SearchStack = createStackNavigator();
+const ProfileStack = createStackNavigator();
 
 const HomeStackScreen = ({ navigation }) => (
   <HomeStack.Navigator
@@ -34,27 +34,6 @@ const HomeStackScreen = ({ navigation }) => (
       }}
     />
   </HomeStack.Navigator>
-);
-
-const TrendingStackScreen = ({ navigation }) => (
-  <TrendingStack.Navigator
-  // screenOptions={{
-  //   headerStyle: {
-  //     backgroundColor: "#fff",
-  //   },
-  //   headerTitleStyle: {
-  //     fontWeight: "bold",
-  //   },
-  // }}
-  >
-    <TrendingStack.Screen
-      name="Trending"
-      component={Trending}
-      options={{
-        headerShown: false,
-      }}
-    />
-  </TrendingStack.Navigator>
 );
 
 const AddPostStackScreen = ({ navigation }) => (
@@ -120,6 +99,27 @@ const SearchStackScreen = ({ navigation }) => (
   </SearchStack.Navigator>
 );
 
+const ProfileStackScreen = ({ navigation }) => (
+  <ProfileStack.Navigator
+  // screenOptions={{
+  //   headerStyle: {
+  //     backgroundColor: "#fff",
+  //   },
+  //   headerTitleStyle: {
+  //     fontWeight: "bold",
+  //   },
+  // }}
+  >
+    <ProfileStack.Screen
+      name="Profile"
+      component={Profile}
+      options={{
+        headerShown: false,
+      }}
+    />
+  </ProfileStack.Navigator>
+);
+
 const Tab = createBottomTabNavigator();
 
 const MainNavigator = () => (
@@ -143,11 +143,11 @@ const MainNavigator = () => (
       }}
     />
     <Tab.Screen
-      name="Trending"
-      component={TrendingStackScreen}
+      name="Search"
+      component={SearchStackScreen}
       options={{
         tabBarIcon: ({ color, size }) => (
-          <SimpleLineIcons name="fire" color={color} size={22} />
+          <Feather name="search" color={color} size={size} />
         ),
       }}
     />
@@ -170,11 +170,11 @@ const MainNavigator = () => (
       }}
     />
     <Tab.Screen
-      name="Search"
-      component={SearchStackScreen}
+      name="Profile"
+      component={ProfileStackScreen}
       options={{
         tabBarIcon: ({ color, size }) => (
-          <Feather name="search" color={color} size={size} />
+          <Feather name="user" color={color} size={size} />
         ),
       }}
     />
