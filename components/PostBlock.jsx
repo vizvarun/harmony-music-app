@@ -8,11 +8,18 @@ import {
   Image,
 } from "react-native";
 const { width, height } = Dimensions.get("window");
+import { Feather } from "@expo/vector-icons";
+import * as Animatable from "react-native-animatable";
 
 export default function PostBlock(props) {
   const [playControl, setPlayControl] = useState(true);
   const handlePlayControl = () => {
     setPlayControl(!playControl);
+  };
+  const [smileControl, setSmileControl] = useState(true);
+  const handleSmileControl = () => {
+    setSmileControl(!smileControl);
+    props.appreHandler(props.id, smileControl);
   };
   return (
     <View>
@@ -55,7 +62,25 @@ export default function PostBlock(props) {
             </TouchableOpacity>
           </View>
         </View>
-        <View style={styles.detailsBlock}></View>
+        <View style={styles.detailsBlock}>
+          <View style={styles.appreciationsBlock}>
+            <TouchableOpacity onPress={() => handleSmileControl()}>
+              {smileControl ? (
+                <Feather name="smile" size={24} color="gray" />
+              ) : (
+                <Animatable.Image
+                  animation="rubberBand"
+                  duration={1500}
+                  source={require("../assets/smile.png")}
+                  resizeMode="contain"
+                />
+              )}
+            </TouchableOpacity>
+            <Text style={styles.appreciationText}>
+              {props.appreciations} appreciations
+            </Text>
+          </View>
+        </View>
       </View>
     </View>
   );
@@ -87,7 +112,6 @@ const styles = StyleSheet.create({
     fontSize: 11,
     color: "#606060",
     fontFamily: "OswaldRegular",
-
   },
   postView: {
     alignItems: "center",
@@ -108,5 +132,20 @@ const styles = StyleSheet.create({
     marginVertical: 20,
     marginLeft: 20,
     borderRadius: width / 20,
+  },
+  detailsBlock: {
+    justifyContent: "center",
+    marginVertical: 10,
+    marginBottom: 20,
+    marginLeft: width / 10,
+  },
+  appreciationsBlock: {
+    flexDirection: "row",
+  },
+  appreciationText: {
+    fontFamily: "OswaldRegular",
+    color: "gray",
+    marginHorizontal: 10,
+    fontSize: 15,
   },
 });
