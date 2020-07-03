@@ -8,8 +8,9 @@ import {
   Image,
 } from "react-native";
 const { width, height } = Dimensions.get("window");
-import { Feather } from "@expo/vector-icons";
+import { Feather, MaterialCommunityIcons } from "@expo/vector-icons";
 import * as Animatable from "react-native-animatable";
+import { TextInput } from "react-native-gesture-handler";
 
 export default function PostBlock(props) {
   const [playControl, setPlayControl] = useState(true);
@@ -80,6 +81,50 @@ export default function PostBlock(props) {
               {props.appreciations} appreciations
             </Text>
           </View>
+          <View style={styles.iconsBlock}>
+            <Feather
+              name="share-2"
+              size={22}
+              color="gray"
+              style={{ marginHorizontal: 5 }}
+            />
+            <Feather
+              name="bookmark"
+              size={22}
+              color="gray"
+              style={{ marginHorizontal: 16 }}
+            />
+             <Feather
+              name="download"
+              size={22}
+              color="gray"
+              style={{ marginHorizontal: 4 }}
+            />
+          </View>
+        </View>
+        <View style={styles.commentBlock}>
+          <View
+            style={[
+              styles.action,
+              {
+                marginTop: 20,
+                borderBottomColor: "black",
+              },
+            ]}
+          >
+            <TextInput
+              placeholder="Write here"
+              placeholderTextColor="gray"
+              style={styles.textInput}
+              autoCapitalize="none"
+            />
+            <MaterialCommunityIcons
+              name="comment-outline"
+              size={18}
+              color="gray"
+              style={{ marginTop: 4, marginHorizontal: 10 }}
+            />
+          </View>
         </View>
       </View>
     </View>
@@ -134,10 +179,10 @@ const styles = StyleSheet.create({
     borderRadius: width / 20,
   },
   detailsBlock: {
-    justifyContent: "center",
-    marginVertical: 10,
-    marginBottom: 20,
+    justifyContent: "flex-start",
+    marginTop: 15,
     marginLeft: width / 10,
+    flexDirection: "row",
   },
   appreciationsBlock: {
     flexDirection: "row",
@@ -147,5 +192,30 @@ const styles = StyleSheet.create({
     color: "gray",
     marginHorizontal: 10,
     fontSize: 15,
+  },
+  iconsBlock: {
+    flexDirection: "row",
+    marginHorizontal: 10,
+  },
+  commentBlock: {
+    width: width / 1.3,
+    marginLeft: width / 10,
+    marginTop: 10,
+    marginBottom: 35,
+  },
+  action: {
+    flexDirection: "row",
+    borderWidth: 1,
+    borderColor: "gray",
+    borderRadius: 8,
+    paddingBottom: 8,
+    paddingTop: 4,
+  },
+  textInput: {
+    flex: 1,
+    marginTop: 0,
+    paddingLeft: 10,
+    color: "gray",
+    fontFamily: "OswaldRegular",
   },
 });
