@@ -94,7 +94,7 @@ export default function PostBlock(props) {
               color="gray"
               style={{ marginHorizontal: 16 }}
             />
-             <Feather
+            <Feather
               name="download"
               size={22}
               color="gray"
@@ -107,8 +107,7 @@ export default function PostBlock(props) {
             style={[
               styles.action,
               {
-                marginTop: 20,
-                borderBottomColor: "black",
+                marginTop: 20
               },
             ]}
           >
@@ -198,7 +197,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
   },
   commentBlock: {
-    width: width / 1.3,
+    width: width / 1.28,
     marginLeft: width / 10,
     marginTop: 10,
     marginBottom: 35,

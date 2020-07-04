@@ -143,11 +143,11 @@ const MainNavigator = () => (
       }}
     />
     <Tab.Screen
-      name="Search"
-      component={SearchStackScreen}
+      name="Smiles"
+      component={SmilesStackScreen}
       options={{
         tabBarIcon: ({ color, size }) => (
-          <Feather name="search" color={color} size={size} />
+          <Feather name="smile" color={color} size={size} />
         ),
       }}
     />
@@ -161,11 +161,11 @@ const MainNavigator = () => (
       }}
     />
     <Tab.Screen
-      name="Smiles"
-      component={SmilesStackScreen}
+      name="Search"
+      component={SearchStackScreen}
       options={{
         tabBarIcon: ({ color, size }) => (
-          <Feather name="smile" color={color} size={size} />
+          <Feather name="search" color={color} size={size} />
         ),
       }}
     />
